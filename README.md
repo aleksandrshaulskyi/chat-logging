@@ -1,6 +1,6 @@
-# Chat-auth.
+# Chat-logging.
 
-The authentication microservice for the distributed chat system.
+The logging microservice for the distributed chat system.
 
 ## Brief.
 
