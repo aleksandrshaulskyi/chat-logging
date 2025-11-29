@@ -15,7 +15,7 @@ logs created by the application.
 
 Might be worth noticing that in probably 90% of times I would utilize stack used
 for metrics in this project - Open Telemetry | Prometheus | Grafana with Loki.
-It is more light weight and also more modern solution. And you would probably use
+It is more light weight, more modern and easier-to-implement solution. And you would probably use
 it for metrics anyway so.
 
 ## Stage.
