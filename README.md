@@ -4,49 +4,37 @@ The logging microservice for the distributed chat system.
 
 ## Brief.
 
-This microservice is generally responsible for everything that is related to
-authentication process. The authentication is based on the stateless approach
-using JSON web tokens. That said, we utilize both full advantage of the stateless
-tokens and it's main disadvantage - unability to revoke an issued token immediately.
+The logging microservice built on top of probably the most
+classic logging solution - ELK. And Filebeat service for log
+transportation.
+
+Comes with pre-built dashboards that are ready to be imported to Kibana
+and contain both list representation of logs and visualizations. They can be found at
+**/kibana_dashboards/** directory and contain everything that is needed to properly display
+logs created by the application.
+
+Might be worth noticing that in probably 90% of times I would utilize stack used
+for metrics in this project - Open Telemetry | Prometheus | Grafana with Loki.
+It is more light weight and also more modern solution. And you would probably use
+it for metrics anyway so.
 
 ## Stage.
 This service is in the stage of active development. Updates are released multiple times a week.
 
 ## Features.
-This microservice operates with the two domain entities:
-
-1) Session
-2) User
-
-Thus it provides all that is required to work with them.
-
-1) Create/Refresh/Terminate sessions.
-2) CRU (Deleting is not yet released) operations with User.
-
-## Architecture.
-
-This microservice is built using the Clean Architecture approach.
-It consists of 4 layers which are:
-
-1) Domain (entities, value objects)
-2) Application layer (domain entities orchestration and business logic)
-3) Interface adapters (thin transport layer that incapsulates the internal logic)
-4) Infrastructure (frameworks, databases, etc.)
+Provides logging for the services of the system.
 
 ## Usage.
 
 1) Clone the repository.
-2) Create .env file in the backed directory using the env_example.txt as an example.
+2) Create .env file in the backed directory using the env_example.txt as an example.  
+In fact you can simply copy it as it does not contain anything project-specific at all.
 3) ```docker-compose up --build``` in the directory where docker-compose.yaml file is located.
-4) The application will be available on **http://localhost:8000**
+4) Kibana will be available at the address **http://localhost:5601**
 
 ## Recent updates.
 
 None yet released.
-
-## Docs.
-
-Available at the standard FastAPI docs endpoint **http://localhost:8000/docs**
 
 ## Back to Index repository of the whole chat system.
 
