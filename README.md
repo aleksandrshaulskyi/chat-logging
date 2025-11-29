@@ -1,41 +1,65 @@
-# Chat-logging.
+Chat-Logging
 
-The logging microservice for the distributed chat system.
+Logging microservice for the distributed chat system
 
-## Brief.
+Overview
 
-The logging microservice built on top of probably the most
-classic logging solution - ELK. And Filebeat service for log
-transportation.
+This microservice provides centralized logging via the classic ELK stack (Elasticsearch, Logstash, Kibana), with Filebeat used as the log shipper.
 
-Comes with pre-built dashboards that are ready to be imported to Kibana
-and contain both list representation of logs and visualizations. They can be found at
-**/kibana_dashboards/** directory and contain everything that is needed to properly display
-logs created by the application.
+It includes pre-built Kibana dashboards with both list-style log views and graphical visualizations.
+All dashboards are located in the /kibana_dashboards/ directory and can be imported directly into Kibana.
 
-Might be worth noticing that in probably 90% of times I would utilize stack used
-for metrics in this project - Open Telemetry | Prometheus | Grafana with Loki.
-It is more light weight, more modern and easier-to-implement solution. And you would probably use
-it for metrics anyway so.
+Note: In ~90% of practical cases I would choose a modern, lightweight stack like OpenTelemetry + Prometheus + Grafana + Loki.
+It’s simpler, more lightweight, and you'll likely use Prometheus/Grafana for metrics anyway.
 
-## Stage.
-This service is in the stage of active development. Updates are released multiple times a week.
+Development Stage
 
-## Features.
-Provides logging for the services of the system.
+Active development.
+Updates are released several times a week.
 
-## Usage.
+Features
 
-1) Clone the repository.
-2) Create .env file in the backed directory using the env_example.txt as an example.  
-In fact you can simply copy it as it does not contain anything project-specific at all.
-3) ```docker-compose up --build``` in the directory where docker-compose.yaml file is located.
-4) Kibana will be available at the address **http://localhost:5601**
+Centralized logging for all services in the distributed chat system
 
-## Recent updates.
+Pre-built Kibana dashboards
 
-None yet released.
+Filebeat-based log transportation
 
-## Back to Index repository of the whole chat system.
+Fully containerized environment
+
+Usage
+1. Clone the repository
+git clone <your-repo-url>
+
+2. Create an .env file
+
+Use env_example.txt located in the backend directory.
+You can simply copy it as-is — it contains no project-specific secrets.
+
+3. Run the stack
+docker-compose up --build
+
+4. Open Kibana
+
+Kibana will be available at:
+
+http://localhost:5601
+
+Dashboards
+
+All dashboards are located in:
+
+/kibana_dashboards/
+
+
+You can import them through Kibana → Stack Management → Saved Objects → Import.
+
+Recent Updates
+
+No released updates yet.
+
+Root Repository
+
+The index repository for the entire distributed chat system:
 
 https://github.com/aleksandrshaulskyi/chat-index
