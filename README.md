@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 # Chat-logging.
 
 **Centralized structured logs for the distributed chat platform**
@@ -24,24 +32,45 @@ Dashboards are located in:
 
 They include everything required to display logs produced by the chat services out of the box.
 
-## Stage.
-This service is in the stage of active development. Updates are released multiple times a week.
+> 💡 Note on Logging Stack Choice
+>
+> While ELK is a classic and powerful logging solution, in ~90% of real production work I would choose a more modern, lightweight stack:
+>
+> - OpenTelemetry
+> - Prometheus
+> - Grafana
+> - Loki (instead of Elasticsearch)
+>
+> This combination integrates better with observability setups, has lower operational burden, and is usually already deployed for metrics.
+>
+> ELK is used here primarily to demonstrate experience with both ecosystems.
 
-## Features.
-Provides logging for the services of the system.
+## 🧩 Features
 
-## Usage.
+- Centralized structured logging for all microservices
+- Automatic log shipping via Filebeat
+- Parsing and enrichment pipelines via Logstash
+- Kibana dashboards for log exploration and analytics
+- Docker-based, fully runnable locally
 
-1) Clone the repository.
-2) Create .env file in the backed directory using the env_example.txt as an example.  
-In fact you can simply copy it as it does not contain anything project-specific at all.
-3) ```docker-compose up --build``` in the directory where docker-compose.yaml file is located.
-4) Kibana will be available at the address **http://localhost:5601**
+⚙️ Usage
 
-## Recent updates.
+1) Clone the repository
 
-None yet released.
+2) Inside the backend directory, create a .env file using env_example.txt
 
-## Back to Index repository of the whole chat system.
+3) You can simply copy it — nothing project-specific inside
+
+4) Run the stack: ```docker-compose up --build```
+
+After startup, open Kibana:
+
+👉 **http://localhost:5601**
+
+Depending on your hardware, Elasticsearch may take a moment to initialize.
+
+## 🔗 Back to the Main Index Repository
+
+To explore the full distributed chat system:
 
 https://github.com/aleksandrshaulskyi/chat-index
