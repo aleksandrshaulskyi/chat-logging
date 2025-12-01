@@ -1,22 +1,28 @@
 # Chat-logging.
 
-The logging microservice for the distributed chat system.
+**Centralized structured logs for the distributed chat platform**
 
-## Brief.
+This microservice provides a full ELK-based logging pipeline for the entire chat system, including log shipping, storage, search, visualization, and pre-built dashboards for Kibana.
 
-The logging microservice built on top of probably the most
-classic logging solution - ELK. And Filebeat service for log
-transportation.
+## 🚀 Overview
 
-Comes with pre-built dashboards that are ready to be imported to Kibana
-and contain both list representation of logs and visualizations. They can be found at
-**/kibana_dashboards/** directory and contain everything that is needed to properly display
-logs created by the application.
+The logging service is built on top of the classic and battle-tested ELK stack:
 
-Might be worth noticing that in probably 90% of times I would utilize stack used
-for metrics in this project - Open Telemetry | Prometheus | Grafana with Loki.
-It is more light weight, more modern and easier-to-implement solution. And you would probably use
-it for metrics anyway so.
+- **Filebeat** → log shipping from microservices
+
+- **Logstash** → parsing, enrichment, routing
+
+- **Elasticsearch** → log indexing and storage
+
+- **Kibana** → dashboards, visualizations, and search
+
+The system comes with ready-to-import Kibana dashboards that visualize application logs in a clean, analytical manner — including both list-oriented views and aggregated charts.
+
+Dashboards are located in:
+
+```/kibana_dashboards/```
+
+They include everything required to display logs produced by the chat services out of the box.
 
 ## Stage.
 This service is in the stage of active development. Updates are released multiple times a week.
