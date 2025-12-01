@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 # Chat-logging.
 
 **Centralized structured logs for the distributed chat platform**
@@ -53,7 +45,7 @@ They include everything required to display logs produced by the chat services o
 - Kibana dashboards for log exploration and analytics
 - Docker-based, fully runnable locally
 
-⚙️ Usage
+## ⚙️ Usage
 
 1) Clone the repository
 
